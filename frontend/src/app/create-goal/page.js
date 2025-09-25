@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import API_BASE_URL from '../config/api';
-
 const API_URL = `${API_BASE_URL}/api`;
 
 // Theme and styles
