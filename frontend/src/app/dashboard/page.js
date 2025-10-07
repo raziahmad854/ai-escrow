@@ -108,7 +108,7 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
       <div style={{
         backgroundColor: '#ffffff',
         borderRadius: '12px',
-        padding: '32px',
+        padding: '24px',
         maxWidth: '600px',
         width: '100%',
         maxHeight: '90vh',
@@ -116,10 +116,10 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
         boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)'
       }} onClick={(e) => e.stopPropagation()}>
         
-        <h2 style={{ fontSize: '24px', fontWeight: '700', marginBottom: '8px', color: theme.colors.text }}>
+        <h2 style={{ fontSize: '20px', fontWeight: '700', marginBottom: '8px', color: theme.colors.text }}>
           Submit Milestone Proof
         </h2>
-        <p style={{ color: theme.colors.textSecondary, marginBottom: '24px', lineHeight: '1.5' }}>
+        <p style={{ color: theme.colors.textSecondary, marginBottom: '20px', lineHeight: '1.5', fontSize: '14px' }}>
           {milestone.description}
         </p>
 
@@ -127,13 +127,13 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
           backgroundColor: '#f0f9ff',
           border: '1px solid #0ea5e9',
           borderRadius: '8px',
-          padding: '16px',
-          marginBottom: '24px'
+          padding: '12px',
+          marginBottom: '20px'
         }}>
-          <div style={{ fontWeight: '600', color: '#0c4a6e', marginBottom: '8px', fontSize: '14px' }}>
+          <div style={{ fontWeight: '600', color: '#0c4a6e', marginBottom: '8px', fontSize: '13px' }}>
             Verification Requirements:
           </div>
-          <div style={{ fontSize: '14px', color: '#075985', lineHeight: '1.5' }}>
+          <div style={{ fontSize: '13px', color: '#075985', lineHeight: '1.5' }}>
             {milestone.verificationCriteria || 'Provide proof of completion'}
           </div>
           <div style={{ marginTop: '8px', fontSize: '12px', color: '#0c4a6e' }}>
@@ -148,7 +148,7 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
             padding: '12px',
             borderRadius: '8px',
             marginBottom: '16px',
-            fontSize: '14px'
+            fontSize: '13px'
           }}>
             {error}
           </div>
@@ -156,20 +156,20 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
 
         {verificationResult && (
           <div style={{
-            padding: '16px',
+            padding: '12px',
             borderRadius: '8px',
             marginBottom: '16px',
             backgroundColor: verificationResult.verified ? '#dcfce7' : '#fef3c7',
             border: `2px solid ${verificationResult.verified ? '#86efac' : '#fcd34d'}`,
             color: verificationResult.verified ? '#166534' : '#92400e'
           }}>
-            <div style={{ fontWeight: '600',marginBottom: '8px', fontSize: '16px' }}>
+            <div style={{ fontWeight: '600', marginBottom: '8px', fontSize: '14px' }}>
               {verificationResult.verified ? '✓ Verification Successful!' : 'Verification Result'}
             </div>
-            <div style={{ fontSize: '14px', marginBottom: '8px' }}>
+            <div style={{ fontSize: '13px', marginBottom: '8px' }}>
               Confidence: {verificationResult.confidence}%
             </div>
-            <div style={{ fontSize: '14px', lineHeight: '1.5' }}>{verificationResult.analysis}</div>
+            <div style={{ fontSize: '13px', lineHeight: '1.5' }}>{verificationResult.analysis}</div>
             {verificationResult.suggestions && (
               <div style={{ fontSize: '12px', marginTop: '8px', opacity: 0.8 }}>
                 Suggestion: {verificationResult.suggestions}
@@ -178,11 +178,11 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
           </div>
         )}
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {!selfCertify && (
             <>
               <div>
-                <label style={{ fontSize: '14px', fontWeight: '600', display: 'block', marginBottom: '8px', color: theme.colors.text }}>
+                <label style={{ fontSize: '13px', fontWeight: '600', display: 'block', marginBottom: '8px', color: theme.colors.text }}>
                   Proof URL (optional)
                 </label>
                 <input
@@ -192,16 +192,16 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
                   placeholder="https://example.com/proof.jpg"
                   style={{
                     width: '100%',
-                    padding: '12px',
+                    padding: '10px',
                     border: '1px solid #e2e8f0',
                     borderRadius: '8px',
-                    fontSize: '14px'
+                    fontSize: '13px'
                   }}
                 />
               </div>
 
               <div>
-                <label style={{ fontSize: '14px', fontWeight: '600', display: 'block', marginBottom: '8px', color: theme.colors.text }}>
+                <label style={{ fontSize: '13px', fontWeight: '600', display: 'block', marginBottom: '8px', color: theme.colors.text }}>
                   Proof Description *
                 </label>
                 <textarea
@@ -210,12 +210,12 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
                   placeholder="Describe what you did and how you completed this milestone..."
                   style={{
                     width: '100%',
-                    padding: '12px',
+                    padding: '10px',
                     border: '1px solid #e2e8f0',
                     borderRadius: '8px',
-                    minHeight: '120px',
+                    minHeight: '100px',
                     fontFamily: 'inherit',
-                    fontSize: '14px',
+                    fontSize: '13px',
                     resize: 'vertical'
                   }}
                 />
@@ -227,7 +227,7 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
             display: 'flex',
             alignItems: 'center',
             gap: '8px',
-            padding: '12px',
+            padding: '10px',
             backgroundColor: '#fef3c7',
             border: '1px solid #fcd34d',
             borderRadius: '8px'
@@ -239,14 +239,14 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
               id="selfCertify"
               style={{ cursor: 'pointer' }}
             />
-            <label htmlFor="selfCertify" style={{ fontSize: '14px', color: '#92400e', cursor: 'pointer' }}>
+            <label htmlFor="selfCertify" style={{ fontSize: '13px', color: '#92400e', cursor: 'pointer' }}>
               I want to self-certify this milestone
             </label>
           </div>
 
           {selfCertify && (
             <div>
-              <label style={{ fontSize: '14px', fontWeight: '600', display: 'block', marginBottom: '8px', color: theme.colors.text }}>
+              <label style={{ fontSize: '13px', fontWeight: '600', display: 'block', marginBottom: '8px', color: theme.colors.text }}>
                 Self-Certification Reason *
               </label>
               <textarea
@@ -255,30 +255,30 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
                 placeholder="Explain why you're self-certifying (e.g., proof is personal/private)..."
                 style={{
                   width: '100%',
-                  padding: '12px',
+                  padding: '10px',
                   border: '1px solid #e2e8f0',
                   borderRadius: '8px',
-                  minHeight: '100px',
+                  minHeight: '80px',
                   fontFamily: 'inherit',
-                  fontSize: '14px',
+                  fontSize: '13px',
                   resize: 'vertical'
                 }}
               />
             </div>
           )}
 
-          <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>
+          <div style={{ display: 'flex', gap: '10px', marginTop: '16px' }}>
             <button
               onClick={onClose}
               disabled={loading}
               style={{
                 flex: 1,
-                padding: '12px',
+                padding: '10px',
                 borderRadius: '8px',
                 border: '1px solid #e2e8f0',
                 backgroundColor: 'transparent',
                 cursor: loading ? 'not-allowed' : 'pointer',
-                fontSize: '14px',
+                fontSize: '13px',
                 fontWeight: '600',
                 color: theme.colors.textSecondary
               }}
@@ -290,17 +290,17 @@ function MilestoneProofModal({ milestone, goalId, onClose, onSuccess }) {
               disabled={loading || (!selfCertify && !proofDescription.trim()) || (selfCertify && !selfCertificationReason.trim())}
               style={{
                 flex: 1,
-                padding: '12px',
+                padding: '10px',
                 borderRadius: '8px',
                 border: 'none',
                 backgroundColor: loading ? '#94a3b8' : theme.colors.primary,
                 color: '#ffffff',
                 cursor: (loading || (!selfCertify && !proofDescription.trim()) || (selfCertify && !selfCertificationReason.trim())) ? 'not-allowed' : 'pointer',
-                fontSize: '14px',
+                fontSize: '13px',
                 fontWeight: '600'
               }}
             >
-              {loading ? 'Submitting...' : selfCertify ? 'Self-Certify & Complete' : 'Submit Proof'}
+              {loading ? 'Submitting...' : selfCertify ? 'Self-Certify' : 'Submit Proof'}
             </button>
           </div>
         </div>
@@ -410,96 +410,102 @@ export default function DashboardPage() {
       <header style={{
         backgroundColor: theme.colors.background,
         borderBottom: `1px solid ${theme.colors.border}`,
-        padding: '16px 0',
-        marginBottom: '32px'
+        padding: '12px 0',
+        marginBottom: '24px'
       }}>
         <div style={{
           maxWidth: '1200px',
           margin: '0 auto',
-          padding: '0 16px',
+          padding: '0 12px',
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '12px'
         }}>
-          <div style={{ fontSize: '20px', fontWeight: '700', color: theme.colors.primary }}>AI Escrow</div>
-          <nav style={{ display: 'flex', gap: '16px' }}>
+          <div style={{ fontSize: '18px', fontWeight: '700', color: theme.colors.primary }}>AI Escrow</div>
+          <nav style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
             <span style={{
               color: theme.colors.textSecondary,
-              fontSize: '14px',
+              fontSize: '13px',
               fontWeight: '500',
-              padding: '8px 16px',
+              padding: '6px 12px',
               borderRadius: '8px',
               backgroundColor: theme.colors.backgroundSecondary,
-              cursor: 'pointer'
+              cursor: 'pointer',
+              whiteSpace: 'nowrap'
             }}>Dashboard</span>
             <span onClick={() => navigateTo('/create-goal')} style={{
               color: theme.colors.textSecondary,
-              fontSize: '14px',
+              fontSize: '13px',
               fontWeight: '500',
-              padding: '8px 16px',
+              padding: '6px 12px',
               borderRadius: '8px',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              whiteSpace: 'nowrap'
             }}>Create Goal</span>
             <span onClick={() => navigateTo('/wallet')} style={{
               color: theme.colors.textSecondary,
-              fontSize: '14px',
+              fontSize: '13px',
               fontWeight: '500',
-              padding: '8px 16px',
+              padding: '6px 12px',
               borderRadius: '8px',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              whiteSpace: 'nowrap'
             }}>Wallet</span>
           </nav>
         </div>
       </header>
 
-      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 16px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
-          <h1 style={{ fontSize: '32px', fontWeight: '700', color: theme.colors.text, margin: 0 }}>Your Goals Dashboard</h1>
+      <main style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 12px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', flexWrap: 'wrap', gap: '12px' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: '700', color: theme.colors.text, margin: 0 }}>Your Goals Dashboard</h1>
           <button onClick={() => navigateTo('/create-goal')} style={{
             backgroundColor: theme.colors.primary,
             color: '#ffffff',
             border: 'none',
             borderRadius: '8px',
             padding: '8px 16px',
-            fontSize: '14px',
+            fontSize: '13px',
             fontWeight: '600',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            whiteSpace: 'nowrap'
           }}>+ Create New Goal</button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '24px', marginBottom: '32px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px', marginBottom: '24px' }}>
           <div style={{
             backgroundColor: theme.colors.background,
             border: `1px solid ${theme.colors.border}`,
             borderRadius: '8px',
-            padding: '24px'
+            padding: '20px'
           }}>
-            <div style={{ fontSize: '28px', fontWeight: '700', color: theme.colors.primary, marginBottom: '4px' }}>
+            <div style={{ fontSize: '24px', fontWeight: '700', color: theme.colors.primary, marginBottom: '4px' }}>
               {stats.totalGoals}
             </div>
-            <div style={{ fontSize: '14px', color: theme.colors.textSecondary, fontWeight: '500' }}>Total Goals</div>
+            <div style={{ fontSize: '13px', color: theme.colors.textSecondary, fontWeight: '500' }}>Total Goals</div>
           </div>
           <div style={{
             backgroundColor: theme.colors.background,
             border: `1px solid ${theme.colors.border}`,
             borderRadius: '8px',
-            padding: '24px'
+            padding: '20px'
           }}>
-            <div style={{ fontSize: '28px', fontWeight: '700', color: theme.colors.warning, marginBottom: '4px' }}>
+            <div style={{ fontSize: '24px', fontWeight: '700', color: theme.colors.warning, marginBottom: '4px' }}>
               {stats.activeGoals}
             </div>
-            <div style={{ fontSize: '14px', color: theme.colors.textSecondary, fontWeight: '500' }}>Active Goals</div>
+            <div style={{ fontSize: '13px', color: theme.colors.textSecondary, fontWeight: '500' }}>Active Goals</div>
           </div>
           <div style={{
             backgroundColor: theme.colors.background,
             border: `1px solid ${theme.colors.border}`,
             borderRadius: '8px',
-            padding: '24px'
+            padding: '20px'
           }}>
-            <div style={{ fontSize: '28px', fontWeight: '700', color: theme.colors.success, marginBottom: '4px' }}>
+            <div style={{ fontSize: '24px', fontWeight: '700', color: theme.colors.success, marginBottom: '4px' }}>
               {stats.completedGoals}
             </div>
-            <div style={{ fontSize: '14px', color: theme.colors.textSecondary, fontWeight: '500' }}>Completed Goals</div>
+            <div style={{ fontSize: '13px', color: theme.colors.textSecondary, fontWeight: '500' }}>Completed Goals</div>
           </div>
         </div>
 
@@ -508,23 +514,24 @@ export default function DashboardPage() {
             backgroundColor: '#fee2e2',
             color: '#991b1b',
             border: '1px solid #fca5a5',
-            padding: '16px',
+            padding: '12px',
             borderRadius: '8px',
-            marginBottom: '24px'
+            marginBottom: '20px',
+            fontSize: '14px'
           }}>{error}</div>
         )}
 
         {goals.length === 0 ? (
           <div style={{
             textAlign: 'center',
-            padding: '48px 24px',
+            padding: '40px 20px',
             backgroundColor: theme.colors.background,
             borderRadius: '8px',
             border: `1px solid ${theme.colors.border}`
           }}>
             <div style={{ fontSize: '48px', marginBottom: '16px', opacity: 0.5 }}>🎯</div>
-            <h3 style={{ color: theme.colors.text, marginBottom: '8px' }}>No Goals Yet</h3>
-            <p style={{ color: theme.colors.textSecondary, marginBottom: '24px' }}>
+            <h3 style={{ color: theme.colors.text, marginBottom: '8px', fontSize: '18px' }}>No Goals Yet</h3>
+            <p style={{ color: theme.colors.textSecondary, marginBottom: '20px', fontSize: '14px' }}>
               Start your journey by creating your first goal.
             </p>
             <button onClick={() => navigateTo('/create-goal')} style={{
@@ -532,14 +539,14 @@ export default function DashboardPage() {
               color: '#ffffff',
               border: 'none',
               borderRadius: '8px',
-              padding: '12px 24px',
+              padding: '10px 20px',
               fontSize: '14px',
               fontWeight: '600',
               cursor: 'pointer'
             }}>Create Your First Goal</button>
           </div>
         ) : (
-          <div style={{ display: 'grid', gap: '24px' }}>
+          <div style={{ display: 'grid', gap: '20px' }}>
             {goals.map((goal) => {
               const progress = calculateProgress(goal.milestones);
               const completedMilestones = goal.milestones.filter(m => m.isCompleted).length;
@@ -549,28 +556,29 @@ export default function DashboardPage() {
                   backgroundColor: theme.colors.background,
                   border: `1px solid ${theme.colors.border}`,
                   borderRadius: '8px',
-                  padding: '24px'
+                  padding: '20px'
                 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{ fontSize: '18px', fontWeight: '600', color: theme.colors.text, marginBottom: '8px', lineHeight: '1.4' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px', flexWrap: 'wrap', gap: '12px' }}>
+                    <div style={{ flex: 1, minWidth: '200px' }}>
+                      <h3 style={{ fontSize: '16px', fontWeight: '600', color: theme.colors.text, marginBottom: '8px', lineHeight: '1.4' }}>
                         {goal.title}
                       </h3>
-                      <div style={{ display: 'flex', gap: '16px', fontSize: '14px', color: theme.colors.textSecondary }}>
+                      <div style={{ display: 'flex', gap: '12px', fontSize: '13px', color: theme.colors.textSecondary, flexWrap: 'wrap' }}>
                         <span><strong>Deposit:</strong> {formatCurrency(goal.depositAmount)}</span>
-                        <span><strong>Progress:</strong> {completedMilestones}/{goal.milestones.length} milestones</span>
+                        <span><strong>Progress:</strong> {completedMilestones}/{goal.milestones.length}</span>
                         <span><strong>Created:</strong> {new Date(goal.createdAt).toLocaleDateString()}</span>
                       </div>
                     </div>
                     <div style={{
                       padding: '4px 8px',
                       borderRadius: '12px',
-                      fontSize: '12px',
+                      fontSize: '11px',
                       fontWeight: '600',
                       textTransform: 'uppercase',
                       letterSpacing: '0.5px',
                       backgroundColor: goal.status === 'completed' ? '#dcfce7' : goal.status === 'active' ? '#dbeafe' : '#fee2e2',
-                      color: goal.status === 'completed' ? '#166534' : goal.status === 'active' ? '#1e40af' : '#991b1b'
+                      color: goal.status === 'completed' ? '#166534' : goal.status === 'active' ? '#1e40af' : '#991b1b',
+                      whiteSpace: 'nowrap'
                     }}>
                       {goal.status}
                     </div>
@@ -579,11 +587,11 @@ export default function DashboardPage() {
                   <div style={{ backgroundColor: theme.colors.border, borderRadius: '8px', height: '8px', overflow: 'hidden', marginBottom: '8px' }}>
                     <div style={{ height: '100%', backgroundColor: theme.colors.success, width: `${progress}%`, transition: 'width 0.3s ease' }} />
                   </div>
-                  <p style={{ fontSize: '12px', color: theme.colors.textSecondary, marginBottom: '24px' }}>
+                  <p style={{ fontSize: '12px', color: theme.colors.textSecondary, marginBottom: '20px' }}>
                     {progress}% Complete
                   </p>
 
-                  <h4 style={{ fontSize: '16px', fontWeight: '600', color: theme.colors.text, marginBottom: '16px' }}>Milestones</h4>
+                  <h4 style={{ fontSize: '14px', fontWeight: '600', color: theme.colors.text, marginBottom: '12px' }}>Milestones</h4>
                   
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                     {goal.milestones.map((milestone) => (
@@ -609,13 +617,14 @@ export default function DashboardPage() {
                           {milestone.isCompleted && <span style={{ color: '#ffffff', fontSize: '12px' }}>✓</span>}
                         </div>
                         
-                        <div style={{ flex: 1 }}>
+                        <div style={{ flex: 1, minWidth: 0 }}>
                           <div style={{
-                            fontSize: '14px',
+                            fontSize: '13px',
                             color: theme.colors.text,
                             marginBottom: '4px',
                             textDecoration: milestone.isCompleted ? 'line-through' : 'none',
-                            opacity: milestone.isCompleted ? 0.7 : 1
+                            opacity: milestone.isCompleted ? 0.7 : 1,
+                            wordWrap: 'break-word'
                           }}>
                             {milestone.description}
                           </div>
@@ -629,12 +638,12 @@ export default function DashboardPage() {
                           </div>
                           {milestone.verificationCriteria && !milestone.isCompleted && (
                             <div style={{
-                              fontSize: '12px',
+                              fontSize: '11px',
                               color: '#075985',
                               backgroundColor: '#f0f9ff',
-                              padding: '8px',
+                              padding: '6px',
                               borderRadius: '4px',
-                              marginTop: '8px'
+                              marginTop: '6px'
                             }}>
                               <strong>Required:</strong> {milestone.verificationCriteria}
                             </div>
@@ -649,10 +658,12 @@ export default function DashboardPage() {
                               color: '#ffffff',
                               border: 'none',
                               borderRadius: '4px',
-                              padding: '6px 12px',
-                              fontSize: '12px',
+                              padding: '6px 10px',
+                              fontSize: '11px',
                               fontWeight: '600',
-                              cursor: 'pointer'
+                              cursor: 'pointer',
+                              whiteSpace: 'nowrap',
+                              flexShrink: 0
                             }}
                           >
                             Submit Proof
