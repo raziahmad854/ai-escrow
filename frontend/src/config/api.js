@@ -1,7 +1,7 @@
 // src/config/api.js
 const API_BASE_URL = process.env.REACT_APP_API_URL || 
   (process.env.NODE_ENV === 'production'
-    ? 'https://ai-escrow-backend-production.up.railway.app'
+    ? 'https://ai-escrow-backend.onrender.com/'
     : 'http://localhost:5000'
   );
 
