@@ -193,6 +193,40 @@ const styles = {
     color: theme.colors.success,
     fontWeight: '600',
   },
+
+  featuresTitle: {
+    fontSize: '16px',
+    fontWeight: '600',
+    color: theme.colors.text,
+    marginBottom: theme.spacing.md,
+    textAlign: 'center',
+  },
+
+  featuresList: {
+    listStyle: 'none',
+    padding: 0,
+    margin: 0,
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.spacing.sm,
+  },
+
+  codeBlock: {
+    backgroundColor: theme.colors.backgroundSecondary,
+    padding: '2px 6px',
+    borderRadius: '4px',
+    fontFamily: 'monospace',
+  },
+
+  featureWarning: {
+    fontWeight: '500',
+    color: theme.colors.error,
+  },
+
+  featureSuccess: {
+    fontWeight: '500',
+    color: theme.colors.success,
+  },
 };
 
 export default function LoginPage() {
@@ -487,39 +521,47 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div style={styles.features}>
-          <h3 style={{
-            fontSize: '16px',
-            fontWeight: '600',
-            color: theme.colors.text,
-            marginBottom: theme.spacing.md,
-            textAlign: 'center'
+                <section style={styles.features}>
+          <h2 style={styles.featuresTitle}>
+            How to Sign Up
+          </h2>
+          <ol style={{
+            ...styles.featuresList,
+            paddingLeft: theme.spacing.lg,
+            listStyleType: 'decimal',
           }}>
-            Why Choose AI Escrow?
-          </h3>
-          <ul style={styles.featuresList}>
             <li style={styles.featureItem}>
               <span style={styles.featureIcon}>✓</span>
-              AI-generated SMART milestones for your goals
+              <span>
+                Use any random email like <code style={styles.codeBlock}>your_name@g.com</code>
+              </span>
             </li>
             <li style={styles.featureItem}>
               <span style={styles.featureIcon}>✓</span>
-              Escrow system keeps you accountable
+              <span>
+                Create a password: <code style={styles.codeBlock}>aaaaaa</code>
+              </span>
             </li>
             <li style={styles.featureItem}>
               <span style={styles.featureIcon}>✓</span>
-              Get refunds as you complete milestones
+              <span>
+                Enter your name (e.g., <code style={styles.codeBlock}>aman</code>)
+              </span>
             </li>
             <li style={styles.featureItem}>
               <span style={styles.featureIcon}>✓</span>
-              Track progress with detailed analytics
+              <span style={styles.featureWarning}>
+                ⚠️ Password must be exactly 6 characters
+              </span>
             </li>
             <li style={styles.featureItem}>
               <span style={styles.featureIcon}>✓</span>
-              {activeTab === 'register' ? 'Start with $100 free balance!' : 'Secure and private'}
+              <span style={styles.featureSuccess}>
+                🎉 Start with $100 free balance!
+              </span>
             </li>
-          </ul>
-        </div>
+          </ol>
+        </section>
       </div>
 
       <style jsx>{`
